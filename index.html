@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enterprise Task Scheduler & HR Suite</title>
+
+<!-- CHART.JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- LINK CSS -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<div class="overlay">
+
+<header>Enterprise Task Scheduler & HR Management Suite</header>
+
+<!-- MAIN MENU -->
+<div class="container" id="mainMenu">
+    <h2>Welcome</h2>
+    <button onclick="showNewEmployee()">New Employee</button>
+    <button onclick="showExistingEmployee()">Existing Employee</button>
+    <button onclick="showManagerLogin()">Manager Login</button>
+</div>
+
+<!-- NEW EMPLOYEE REQUEST -->
+<div class="container" id="newEmployee" style="display:none;">
+    <h2>New Employee Application</h2>
+    <input id="newName" placeholder="Full Name">
+    <input id="newEmail" placeholder="yourname@gmail.com">
+    <input id="newPass" type="password" placeholder="Create Password">
+    <button onclick="registerEmployee()">Submit Request</button>
+</div>
+
+<!-- EXISTING EMPLOYEE LOGIN -->
+<div class="container" id="employeeLogin" style="display:none;">
+    <h2>Employee Login</h2>
+    <input id="empEmail" placeholder="email@gmail.com">
+    <input id="empPass" type="password" placeholder="Password">
+    <small>Password hint: The one you set during registration</small>
+    <button onclick="loginEmployee()">Login</button>
+</div>
+
+
+<!-- MANAGER LOGIN -->
+<div class="container" id="managerLogin" style="display:none;">
+    <h2>Manager Login</h2>
+    <input id="managerEmail" placeholder="manager@gmail.com">
+    <input id="managerPass" type="password" placeholder="Password">
+    <small>Password hint: It's 'admin' followed by 123</small>
+    <button onclick="authenticateManager()">Login</button>
+</div>
+
+
+<!-- EMPLOYEE DASHBOARD -->
+<div class="container" id="employeeDashboard" style="display:none;">
+    <h2 id="empTitle"></h2>
+
+    <h3>Your Tasks</h3>
+    <div id="empTaskList"></div>
+
+    <h3>Chat with Manager</h3>
+    <div class="chat-container" id="empChatBox"></div>
+    <input id="empChatInput" placeholder="Type a message">
+    <button onclick="sendEmployeeMessage()">Send</button>
+
+    <button onclick="goHome()">Logout</button>
+</div>
+
+<!-- MANAGER DASHBOARD -->
+<div class="container" id="managerDashboard" style="display:none;">
+    <h2>Manager Dashboard</h2>
+
+    <!-- APPROVAL REQUESTS -->
+    <div id="approvalSection" style="display:none;">
+        <h3>Employee Approval Requests</h3>
+        <div id="approvalList"></div>
+    </div>
+
+    <hr>
+
+    <h3>Assign New Task</h3>
+    <input id="taskName" placeholder="Task name">
+    <input id="taskPriority" placeholder="Priority (1-10)">
+    <input id="taskDeadline" placeholder="Deadline seconds">
+    <select id="taskAssign"></select>
+    <button onclick="assignTask()">Assign</button>
+
+    <h3>Pending Tasks</h3>
+    <div id="pendingTasks"></div>
+
+    <h3>Completed Tasks</h3>
+    <div id="completedTasks"></div>
+
+    <button onclick="executeTask()">Execute Highest Priority Task</button>
+
+    <h3>Reschedule Task</h3>
+    <input id="resName" placeholder="Task name">
+    <input id="resPr" placeholder="New priority">
+    <input id="resDl" placeholder="New deadline">
+    <button onclick="rescheduleTask()">Update</button>
+
+    <hr>
+
+    <h3>Employee List</h3>
+    <div id="employeeList"></div>
+
+    <h3>Promote/Demote Employee</h3>
+    <select id="promoteSelect"></select>
+    <select id="rankSelect">
+        <option>Junior</option>
+        <option>Mid</option>
+        <option>Senior</option>
+    </select>
+    <button onclick="promoteEmployee()">Apply</button>
+
+    <h3>Pay Salary</h3>
+    <select id="salarySelect"></select>
+    <input id="salaryAmount" placeholder="Salary amount">
+    <button onclick="paySalary()">Pay</button>
+
+    <div id="salaryHistory"></div>
+
+    <h3>Analytics: Employee Task Contribution</h3>
+    <canvas id="taskChart" width="400" height="200"></canvas>
+
+    <h3>Chat With Employees</h3>
+    <div class="chat-container" id="mgrChatBox"></div>
+    <input id="mgrChatInput" placeholder="Type a message">
+    <button onclick="sendManagerMessage()">Send</button>
+
+    <button onclick="goHome()">Logout</button>
+</div>
+
+</div>
+
+<!-- LINK JS -->
+<script src="script.js"></script>
+</body>
+</html>
