@@ -3,7 +3,7 @@ Task_Scheduling_using_PriorityQueue  A web-based Task Scheduler &amp;amp; HR Man
 
 # Installation & Setup
    Clone the repository:
-   git clone https://github.com/yourusername/task-scheduler-hr.git
+   git clone https://github.com/manoharpanthagani07/Task_Scheduling_using_PriorityQueue
    Open index.html in a web browser.
     Manager Login Credentials (default for demo purposes):
     Email: manager@gmail.com
@@ -16,6 +16,9 @@ Task_Scheduling_using_PriorityQueue  A web-based Task Scheduler &amp;amp; HR Man
    Chart.js – Analytics and visual representation of tasks.
    Priority Queue Logic – For task prioritization and scheduling.
    Client-side Storage – Temporary simulation of a database (all data resets on page reload)
+# Vercel deploy
+   live site : https://task-scheduling-using-priority-queu.vercel.app/
+   
 # How It Works
  New Employee Registration
  Employees fill in a registration form.
